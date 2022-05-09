@@ -57,10 +57,12 @@ public class ThirdProjectBootApplication {
 		try {
 			for (int i = 0; i < deleteFolderList_first.length; i++) {
 				deleteFolderList_first[i].delete();
+				System.out.println("Schedule start");
 			}
 			
 			for (int i = 0; i < deleteFolderList_second.length; i++) {
 				deleteFolderList_second[i].delete();
+				System.out.println("Schedule start");
 			}
 		} catch (Exception e) {
 			System.err.println(e);
