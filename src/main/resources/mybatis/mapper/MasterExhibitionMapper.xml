@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.java.mapper.MasterExhibitionMapper">
+	<select id="masterExhibition" resultType="com.human.java.domain.MasterExhibitionVO">
+		SELECT EXHIBITION_TITLE, EXHIBITION_TOTAL_DATE, EXHIBITION_IMAGE
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_FLAG = 'W'
+	</select>
+	
+	<update id="masterExhibitionUpdate" parameterType="com.human.java.domain.MasterExhibitionVO">
+		UPDATE EXHIBITION_INFO
+		SET EXHIBITION_FLAG = #{exhibition_flag}
+		WHERE EXHIBITION_TITLE = #{exhibition_title}
+	</update>
+	
+	<select id="masterExhibitionDR" resultType="com.human.java.domain.MasterExhibitionVO">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_FLAG = 'D' OR  EXHIBITION_FLAG = 'R'
+	</select>
+	
+	<select id="masterExhibitionSearchTitleD" parameterType="map"
+		resultType="com.human.java.domain.MasterExhibitionVO">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_TITLE LIKE '%${title}%' AND EXHIBITION_FLAG = 'D'
+	</select>
+	
+	<select id="masterExhibitionSearchTitleR" parameterType="map"
+		resultType="com.human.java.domain.MasterExhibitionVO">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_TITLE LIKE '%${title}%' AND EXHIBITION_FLAG = 'R'
+	</select>
+</mapper>

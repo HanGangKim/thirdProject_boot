@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.java.mapper.CustomerMapper">
+
+	<insert id="customerInsert" parameterType="com.human.java.domain.CustomerVO">
+		INSERT INTO
+		CUSTOMER_INFO
+		(CUSTOMER_ID, CUSTOMER_PASSWORD , CUSTOMER_NAME , CUSTOMER_PH, CUSTOMER_EMAIL , CUSTOMER_AGE ,CUSTOMER_GENDER ,CUSTOMER_FLAG)
+		VALUES
+		(#{customer_id} , #{customer_password} , #{customer_name} ,  #{customer_ph} , #{customer_email} , #{customer_age} , #{customer_gender} , #{customer_flag})
+	</insert>
+
+	 <select id="customerLogin" 
+	 parameterType="com.human.java.domain.CustomerVO" 
+	 resultType="com.human.java.domain.CustomerVO">
+		SELECT *
+		FROM CUSTOMER_INFO
+		WHERE CUSTOMER_ID = #{customer_id} AND CUSTOMER_PASSWORD = #{customer_password}
+	</select> 
+	
+	<select id="idCheck" parameterType="map" resultType="Int">
+		SELECT count(*)
+		FROM CUSTOMER_INFO
+		WHERE CUSTOMER_ID = #{id}
+	</select>
+	
+	<update id="wishListInsert" parameterType="map">
+		MERGE INTO WISH_LIST
+		USING DUAL
+		ON (EXHIBITION_ID = ${id} AND CUSTOMER_ID ='${request}')
+		WHEN MATCHED THEN
+		UPDATE SET WISH_LIST_FLAG = 'N'
+		WHEN NOT MATCHED THEN
+		INSERT (WISH_LIST_ID, EXHIBITION_ID , CUSTOMER_ID , WISH_LIST_FLAG)
+		VALUES (seq_wish_list.nextval , ${id} , '${request}' ,  'N')
+		<!-- </insert> -->
+		</update>
+
+	 <select id="wishListSearch" parameterType="map" resultType="com.human.java.domain.WishListVO">
+		<![CDATA[SELECT distinct ei.*
+		FROM WISH_LIST wl , EXHIBITION_INFO ei  , CUSTOMER_INFO ci
+		WHERE wl.CUSTOMER_ID = ci.CUSTOMER_ID AND wl.EXHIBITION_ID = ei.EXHIBITION_ID AND ]]>'${request}'<![CDATA[ = ci.CUSTOMER_ID]]>AND wl.WISH_LIST_FLAG = 'N'
+	</select> 
+	
+	
+	<delete id="wishlistdelete" parameterType="map">
+		<![CDATA[DELETE
+		FROM WISH_LIST
+		WHERE EXHIBITION_ID= ]]>${ex}<![CDATA[ AND CUSTOMER_ID =]]> '${id}'
+	</delete>
+	
+	<update id="customerUpdateInfo" parameterType="com.human.java.domain.CustomerVO">
+		UPDATE CUSTOMER_INFO
+		SET
+		CUSTOMER_NAME = #{customer_name},
+		CUSTOMER_PH = #{customer_ph},
+		CUSTOMER_EMAIL = #{customer_email},
+		CUSTOMER_GENDER = #{customer_gender},
+		CUSTOMER_AGE = #{customer_age}
+		WHERE CUSTOMER_ID = #{customer_id}
+	</update>
+
+	<select id="customerConfirmPassword" parameterType="com.human.java.domain.CustomerVO" resultType="com.human.java.domain.CustomerVO">
+	SELECT *
+	FROM CUSTOMER_INFO
+	WHERE CUSTOMER_PASSWORD = #{customer_password} AND CUSTOMER_ID =#{customer_id}
+	</select>
+	
+	<select id="customerFindPassword" parameterType="com.human.java.domain.CustomerVO" resultType="com.human.java.domain.CustomerVO">
+	SELECT *
+	FROM CUSTOMER_INFO
+	WHERE CUSTOMER_ID = #{customer_id} AND CUSTOMER_EMAIL = #{customer_email}
+	</select>
+
+	<!-- 회원 탈퇴  -->
+	<delete id="customerReviewDelete" parameterType="com.human.java.domain.CustomerVO">
+	DELETE FROM REVIEW
+	WHERE CUSTOMER_ID = #{customer_id}
+	</delete>
+
+	<delete id="customerTicketingDelete" parameterType="com.human.java.domain.CustomerVO">
+	DELETE FROM TICKETING
+	WHERE CUSTOMER_ID = #{customer_id}
+	</delete>
+
+	<delete id="customerWishListDelete" parameterType="com.human.java.domain.CustomerVO">
+	DELETE FROM WISH_LIST
+	WHERE CUSTOMER_ID = #{customer_id}
+	</delete>
+
+	<delete id="customerTotalDelete" parameterType="com.human.java.domain.CustomerVO">
+	DELETE FROM CUSTOMER_INFO
+	WHERE CUSTOMER_ID = #{customer_id}
+	</delete>
+	<!-- 회원탈퇴 끝  -->
+
+
+
+
+
+</mapper>
+

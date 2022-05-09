@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.java.mapper.ExhibitionMapper">
+
+	<!-- 메인 탑 4 (중앙) -->
+	<select id="comingExhibition"
+		parameterType="com.human.java.domain.ExhibitionVO"
+		resultType="com.human.java.domain.ExhibitionVO">
+		SELECT *
+
+		FROM (
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_START_DATE
+		> SYSDATE
+		ORDER BY EXHIBITION_START_DATE
+		)
+		WHERE <![CDATA[ ROWNUM <= 4]]>
+		ORDER BY EXHIBITION_START_DATE
+	</select>
+	
+	<!-- 메인 top3(상단)  -->
+	<select id="top3Exhibition" parameterType="com.human.java.domain.ExhibitionVO" resultType="com.human.java.domain.ExhibitionVO">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_ID IN (SELECT EXHIBITION_ID FROM ( SELECT SUM(t.TICKETING_PEOPLE), EXHIBITION_ID FROM TICKETING t
+		GROUP BY t.EXHIBITION_ID ORDER BY SUM(t.TICKETING_PEOPLE) DESC )
+		WHERE <![CDATA[ ROWNUM <= 3 ]]>)
+	</select>
+	
+	<!-- 메인 랜덤(상단) -->
+	<select id="randomExhibition" parameterType="com.human.java.domain.ExhibitionVO" resultType="com.human.java.domain.ExhibitionVO">
+		<![CDATA[select * from  (select * from EXHIBITION_INFO order by dbms_random.value)
+		where rownum <= 1 AND EXHIBITION_FLAG = 'D']]>
+	</select>
+	
+	<!-- 메인 랜덤(하단)  -->
+	<select id="lastExhibition" parameterType="com.human.java.domain.ExhibitionVO" resultType="com.human.java.domain.ExhibitionVO">
+		<![CDATA[SELECT *
+		FROM(SELECT *
+			FROM EXHIBITION_INFO
+			WHERE TO_DATE(EXHIBITION_END_DATE) >= SYSDATE AND EXHIBITION_FLAG = 'D'
+			ORDER BY EXHIBITION_END_DATE)
+		WHERE ROWNUM=1]]>
+	</select>	
+	
+	<!-- 전시회 날짜 검색  -->
+	<select id="exhibitionSearch" parameterType="map"
+		resultType="com.human.java.domain.ExhibitionVO">
+		SELECT *
+		FROM ( SELECT *
+		FROM EXHIBITION_INFO
+		WHERE <![CDATA[(]]>EXHIBITION_START_DATE <![CDATA[<= TO_DATE(']]>${st}<![CDATA[')]]>
+		AND EXHIBITION_END_DATE <![CDATA[>= TO_DATE(']]>${ed}<![CDATA[')]]><![CDATA[)]]>
+		OR<![CDATA[(]]>EXHIBITION_END_DATE<![CDATA[>= TO_DATE(']]>${ed}<![CDATA[')]]>
+		AND EXHIBITION_END_DATE >= SYSDATE<![CDATA[)]]>
+		ORDER BY EXHIBITION_ID )
+		WHERE <![CDATA[ ROWNUM <= ]]>
+		${endRow} AND EXHIBITION_FLAG = 'D'	
+	</select>
+	
+	<!-- 전시회 제목 검색 -->
+	<select id="exhibitionSearchTitle" parameterType="com.human.java.domain.ExhibitionVO" resultType="com.human.java.domain.ExhibitionVO">
+		SELECT *
+		FROM ( SELECT * FROM EXHIBITION_INFO
+		WHERE EXHIBITION_TITLE LIKE '%'||#{exhibition_title}||'%' AND EXHIBITION_FLAG = 'D'
+		ORDER BY EXHIBITION_ID )
+	</select>
+	
+	<!-- 전시회 상세조회  -->
+	<select id="exhibitionDetail" parameterType="map" resultType="com.human.java.domain.ExhibitionVO">
+		SELECT *
+		FROM EXHIBITION_INFO
+		WHERE EXHIBITION_ID = ${id} AND EXHIBITION_FLAG = 'D'
+	</select>
+	
+	<!-- 전시회 예매 -->
+	<insert id="ticketInsert" parameterType="com.human.java.domain.TicketingVO">
+    INSERT INTO
+      TICKETING
+      (TICKETING_ID, TICKETING_DATE , CONSUMER_NAME , CONSUMER_PH,
+      CUSTOMER_ID
+      ,EXHIBITION_ID , TICKETING_FLAG , TICKETING_PEOPLE , TICKETING_MONEY, MONTH)
+      VALUES
+      (seq_ticketing.nextval ,
+      #{ticketing_date} , #{consumer_name} , #{consumer_ph} ,
+      #{customer_id}
+      , #{exhibition_id} , 'N' , #{ticketing_people} , #{ticketing_money} , #{ticketing_month})    
+	</insert>
+
+	<!-- 전시회 예매내역 조회 -->
+	<select id="ticketSelect" parameterType="Hashmap" resultType="com.human.java.domain.TicketingVO">
+		SELECT *
+		FROM EXHIBITION_INFO e , TICKETING t
+		<where>
+		<if test="ticketing_id != null">
+		e.EXHIBITION_ID = t.EXHIBITION_ID AND CUSTOMER_ID = <![CDATA[']]>${id}<![CDATA[']]> AND t.TICKETING_ID = ${ticketing_id}
+		</if>
+		<if test="ticketing_id == null">
+		e.EXHIBITION_ID = t.EXHIBITION_ID AND CUSTOMER_ID =  <![CDATA[']]>${id}<![CDATA[']]>
+		</if>
+		</where>
+		ORDER BY t.TICKETING_ID DESC
+	</select>
+	
+	<!-- 찜목록 플래그 변경 -->
+	<update id="wishListflagChange" parameterType="com.human.java.domain.WishListVO">
+		UPDATE WISH_LIST
+		SET WISH_LIST_FLAG = 'Y'
+		WHERE EXHIBITION_ID= #{exhibition_id} AND CUSTOMER_ID = #{customer_id}
+	</update>
+	
+</mapper>

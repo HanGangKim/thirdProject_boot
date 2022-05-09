@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.java.mapper.MasterCompanyMapper">
+	<select id="masterCompany" resultType="com.human.java.domain.MasterCompanyVO">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_FLAG = 'W'
+	</select>
+	
+	<update id="masterCompanyUpdate" parameterType="com.human.java.domain.MasterCompanyVO" >
+		UPDATE COMPANY_INFO
+		SET COMPANY_FLAG = #{company_flag}
+		WHERE COMPANY_ID = #{company_id}
+	</update>
+	
+		<select id="masterCompanyDR" resultType="com.human.java.domain.MasterCompanyVO">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_FLAG = 'D' OR  COMPANY_FLAG = 'R'
+	</select>
+	
+		<select id="masterCompanySearchTitleD" parameterType="map"
+		resultType="com.human.java.domain.MasterCompanyVO">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_NAME LIKE '%${title}%' AND COMPANY_FLAG = 'D'
+	</select>
+	
+	<select id="masterCompanySearchTitleR" parameterType="map"
+		resultType="com.human.java.domain.MasterCompanyVO">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_NAME LIKE '%${title}%' AND COMPANY_FLAG = 'R'
+	</select>
+</mapper>

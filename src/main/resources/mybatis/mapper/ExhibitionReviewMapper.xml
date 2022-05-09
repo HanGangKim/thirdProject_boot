@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.java.mapper.ReviewMapper">
+	
+	<!-- 리뷰 입력  -->
+	<insert id="insertReview" parameterType="com.human.java.domain.ReviewVO">
+		INSERT INTO REVIEW(REVIEW_ID , REVIEW_TITLE, REVIEW_CONTENTS, REVIEW_DATE, REVIEW_STAR_SCORE  , EXHIBITION_ID , CUSTOMER_ID)
+		VALUES(SEQ_REVIEW.nextval, #{review_title}, #{review_contents} , sysdate , #{review_star_score}  , #{exhibition_id}, #{customer_id})
+	</insert>
+
+	<!-- 게시글 입력시 티켓팅 플래그 업데이트 -->
+	<update id="flagChange" parameterType="com.human.java.domain.TicketingVO">
+		UPDATE TICKETING
+		SET TICKETING_FLAG = 'Y'
+		WHERE TICKETING_ID = #{ticketing_id} AND CUSTOMER_ID = #{customer_id}
+	</update>
+	
+		<!-- 리뷰 업데이트 -->
+   <update id="updateReview" parameterType="com.human.java.domain.ReviewVO">
+      UPDATE REVIEW
+      SET REVIEW_TITLE= #{review_title} , REVIEW_CONTENTS = #{review_contents} , REVIEW_STAR_SCORE =#{review_star_score}
+      WHERE REVIEW_ID  =#{review_id} 
+    </update>
+	
+	<!-- 리뷰 삭제  -->
+	<delete id="deleteReview" parameterType="Hashmap">
+		DELETE
+		FROM REVIEW
+		WHERE REVIEW_ID = ${review_id}
+	</delete>
+	
+	<!-- 리뷰 전체조회 + 검색 + Ajax  -->
+	<select id="getReviewList" parameterType="hashmap" resultType="com.human.java.domain.ReviewVO"> 
+		SELECT *
+		FROM ( SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
+			, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
+			FROM HAN.EXHIBITION_INFO e , HAN.REVIEW r
+		WHERE e.EXHIBITION_ID = r.EXHIBITION_ID 
+		ORDER BY r.REVIEW_ID DESC)
+		<where>
+			<![CDATA[ ROWNUM <= ]]> ${endRow}
+			<if test="searchKeyword != null">
+  			 AND EXHIBITION_TITLE LIKE '%${searchKeyword}%'
+  			</if>	
+		 </where>
+	</select>
+	
+	<!-- 나의 리뷰 조회 -->
+	<select id="getMyReviewList" parameterType="hashmap" resultType="com.human.java.domain.ReviewVO">
+		SELECT e.EXHIBITION_ID , e.EXHIBITION_TITLE ,e.EXHIBITION_START_DATE , e.EXHIBITION_END_DATE , e.EXHIBITION_IMAGE , e.EXHIBITION_LOCATION 
+		, r.REVIEW_TITLE , r.REVIEW_CONTENTS , r.REVIEW_DATE , r.REVIEW_STAR_SCORE , r.REVIEW_ID , r.CUSTOMER_ID
+		FROM EXHIBITION_INFO e , REVIEW r
+		<where>
+		e.EXHIBITION_ID = r.EXHIBITION_ID AND r.CUSTOMER_ID =  <![CDATA[']]>${id}<![CDATA[']]>
+		</where>
+		ORDER BY r.REVIEW_ID DESC
+	</select>
+	
+	<!-- 나의 리뷰 상세조회  -->
+	<select id="getMyReview" parameterType="com.human.java.domain.ReviewVO" resultType="com.human.java.domain.ReviewVO">
+		SELECT e.EXHIBITION_TITLE , r.REVIEW_ID , r.REVIEW_TITLE , r.REVIEW_CONTENTS 
+		FROM REVIEW r , EXHIBITION_INFO e 
+		WHERE r.EXHIBITION_ID = #{exhibition_id} AND r.REVIEW_ID = #{review_id} AND e.EXHIBITION_ID = r.EXHIBITION_ID
+	</select>
+	
+
+</mapper>

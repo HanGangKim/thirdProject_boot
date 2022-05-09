@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.human.java.mapper.CompanyMapper">
+
+	<insert id="companyInsert" parameterType="com.human.java.domain.CompanyVO">
+		INSERT INTO
+		COMPANY_INFO
+		(COMPANY_ID, COMPANY_PASSWORD, COMPANY_NAME, COMPANY_PH, COMPANY_EMAIL, COMPANY_REGNUM, COMPANY_FLAG)
+		VALUES
+		(#{company_id} , #{company_password} , #{company_name} ,  #{company_ph} , #{company_email} , #{company_regnum} , 'W')
+	</insert>
+
+	 <select id="companyLogin" 
+	 parameterType="com.human.java.domain.CompanyVO" resultType="com.human.java.domain.CompanyVO">
+		SELECT *
+		FROM COMPANY_INFO
+		WHERE COMPANY_ID = #{company_id} AND COMPANY_PASSWORD = #{company_password}
+	</select> 
+	
+	<select id="idCheck" parameterType="map" resultType="Int">
+		SELECT count(*)
+		FROM COMPANY_INFO
+		WHERE COMPANY_ID = #{id}
+	</select>
+	
+	
+	<insert id="companyInsertExhibition" parameterType="com.human.java.domain.ExhibitionVO">
+		INSERT INTO EXHIBITION_INFO
+		(EXHIBITION_ID , EXHIBITION_TITLE , EXHIBITION_START_DATE , EXHIBITION_END_DATE , EXHIBITION_TOTAL_DATE , EXHIBITION_IMAGE , EXHIBITION_CONTENTS , EXHIBITION_LOCATION , EXHIBITION_PRICE , COMPANY_ID , EXHIBITION_FLAG, EXHIBITION_MEMO)
+		VALUES 
+		(SEQ_EXHIBITION.nextval  , #{exhibition_title} , #{exhibition_start_date} , #{exhibition_end_date} , #{exhibition_total_date} , #{exhibition_image} , #{exhibition_contents} , #{exhibition_location} , #{exhibition_price} , #{company_id}  ,'W', #{exhibition_memo})
+	</insert>
+	
+	<insert id="companyUpdateExhibition" parameterType="com.human.java.domain.ExhibitionVO">
+		UPDATE EXHIBITION_INFO
+		SET EXHIBITION_TITLE = #{exhibition_title} , EXHIBITION_START_DATE = #{exhibition_start_date} , EXHIBITION_END_DATE = #{exhibition_end_date} , EXHIBITION_TOTAL_DATE = #{exhibition_total_date} , EXHIBITION_IMAGE = #{exhibition_image} , EXHIBITION_CONTENTS = #{exhibition_contents} , EXHIBITION_LOCATION = #{exhibition_location} , EXHIBITION_PRICE = #{exhibition_price} , EXHIBITION_FLAG = 'W' , EXHIBITION_MEMO = #{exhibition_memo}
+		WHERE EXHIBITION_ID = #{exhibition_id}
+	</insert>
+	
+	<select id="getExhibitionCompanyList" parameterType="com.human.java.domain.ExhibitionVO" resultType="com.human.java.domain.ExhibitionVO">
+	SELECT * FROM EXHIBITION_INFO
+	WHERE COMPANY_ID = #{company_id}
+	ORDER BY EXHIBITION_ID DESC
+	</select>
+	
+	<select id="getExhibitionCompanyDetail" parameterType="com.human.java.domain.ExhibitionVO" resultType="com.human.java.domain.ExhibitionVO">
+	SELECT * FROM EXHIBITION_INFO
+	WHERE COMPANY_ID = #{company_id} AND EXHIBITION_ID = #{exhibition_id}
+	</select>
+
+	<update id="companyUpdateInfo" parameterType="com.human.java.domain.CompanyVO">
+		UPDATE COMPANY_INFO
+		SET
+		COMPANY_NAME = #{company_name},
+		COMPANY_PH = #{company_ph},
+		COMPANY_EMAIL = #{company_email},
+		COMPANY_REGNUM = #{company_regnum},
+		COMPANY_FLAG = 'W'
+		WHERE COMPANY_ID = #{company_id}
+	</update>
+	
+	<select id="companyConfirmpassword" parameterType="com.human.java.domain.CompanyVO" resultType="com.human.java.domain.CompanyVO">
+	SELECT *
+	FROM COMPANY_INFO
+	WHERE COMPANY_PASSWORD = #{company_password} AND COMPANY_ID =#{company_id}
+	</select>
+	
+	<select id="companyFindPassword" parameterType="com.human.java.domain.CompanyVO" resultType="com.human.java.domain.CompanyVO">
+	SELECT *
+	FROM COMPANY_INFO
+	WHERE COMPANY_ID = #{company_id} AND COMPANY_EMAIL = #{company_email}
+	</select>
+	
+	<delete id="companyTotalDelete" parameterType="com.human.java.domain.CompanyVO">
+	DELETE FROM COMPANY_INFO	
+	WHERE COMPANY_ID = #{company_id}
+	</delete>
+	
+	<delete id="companyExhibitionDelete" parameterType="com.human.java.domain.ExhibitionVO">
+	DELETE FROM EXHIBITION_INFO
+	WHERE COMPANY_ID = #{company_id} AND EXHIBITION_ID = #{exhibition_id}
+	</delete>
+	
+	<delete id="companyExhibitionDeleteAll" parameterType="com.human.java.domain.ExhibitionVO">
+	DELETE FROM EXHIBITION_INFO
+	WHERE COMPANY_ID = #{company_id}
+	</delete>
+
+
+
+	
+
+</mapper>
