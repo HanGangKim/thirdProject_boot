@@ -1,11 +1,6 @@
 package com.human.java;
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import javax.activation.DataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -16,7 +11,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @EnableScheduling
@@ -44,9 +38,9 @@ public class ThirdProjectBootApplication {
 	@Scheduled(cron = "0/5 * * * * *") // 5초 간격으로 파일을 삭제 
 	public void scheduleTaskUsingCronExpression() {
 		// [1] 경로 변수화 & 파일 객체 생성
-		String path_exhibition_imgs = "D:\\STS\\thirdProject_boot\\src\\main\\resources\\resources\\img\\exhibition_imgs";
+		String path_exhibition_imgs = "/Users/iyxuna/Documents/GitHub/thirdProject_boot/src/main/resources/resources/img/exhibition_imgs";
 		File deleteFolder_first = new File(path_exhibition_imgs);
-		String path_exhibition_sub = "D:\\STS\\thirdProject_boot\\src\\main\\resources\\resources\\img\\exhibition_sub";
+		String path_exhibition_sub = "/Users/iyxuna/Documents/GitHub/thirdProject_boot/src/main/resources/resources/img/exhibition_sub";
 		File deleteFolder_second = new File(path_exhibition_sub);
 		
 		// [2] 해당 경로의 파일을 배열화
