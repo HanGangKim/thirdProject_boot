@@ -112,13 +112,10 @@
 									<div class="card-header border-bottom-0">
 										<h5 class="mb-0">Ticketing Top / Gender Rate</h5>
 									</div>
-									<div class="card-body p-0" style="height: 350px">
+									<div class="card-body p-0 d-flex align-items-center justify-content-center" style="height: 600px">
 										<center>
-											<img class
-												src="http://xdo19.cafe24.com/resources/img/visualizing/ticking_top_N.jpg"
-												style="height: 300px"> <img class
-												src="http://xdo19.cafe24.com/resources/img/visualizing/gender_rate_second.jpg"
-												style="height: 300px">
+											<img src="http://xdo19.cafe24.com/resources/img/visualizing/ticking_top_N_second.jpg" style="height: 500px"> 
+											<img src="http://xdo19.cafe24.com/resources/img/visualizing/gender_rate_second.jpg" style="height: 500px">
 										</center>
 									</div>
 								</div>
@@ -128,13 +125,10 @@
 									<div class="card-header border-bottom-0">
 										<h5 class="mb-0">Ticketing Top / Gender Rate</h5>
 									</div>
-									<div class="card-body p-0" style="height: 350px">
+									<div class="card-body p-0 d-flex align-items-center justify-content-center" style="height: 600px">
 										<center>
-											<img class
-												src="http://xdo19.cafe24.com/resources/img/visualizing/ticking_top_N_line&bar.jpg"
-												style="height: 300px"> <img class
-												src="http://xdo19.cafe24.com/resources/img/visualizing/gender_bar.jpg"
-												style="height: 300px">
+											<img src="http://xdo19.cafe24.com/resources/img/visualizing/ticking_top_N_line&bar_second.jpg" style="height: 500px"> 
+											<img src="http://xdo19.cafe24.com/resources/img/visualizing/gender_bar_second.jpg" style="height: 500px">
 										</center>
 									</div>
 								</div>

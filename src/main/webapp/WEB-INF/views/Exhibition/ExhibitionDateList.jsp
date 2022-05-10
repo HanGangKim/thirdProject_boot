@@ -183,7 +183,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 					</c:forEach>
 				</div>
 				
-				<div class="d-grid d-sm-flex col-11 justify-content-center justify-content-sm-center" onclick="loadMoreAjax()">
+				<div class="d-grid d-sm-flex col-12 justify-content-center justify-content-sm-center" onclick="loadMoreAjax()">
 					<a class="btn btn-outline-dark rounded-pill btn-lg btn-hover-text" >
 						<span class="btn-hover-label label-default">Load more</span> 
 						<span class="btn-hover-label label-hover">Load more</span>

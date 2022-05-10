@@ -270,20 +270,12 @@ if (session.getAttribute("userId") == null) {
 						</div>
 <!-- 						후기 상세 모달 끝 -->
 			
-			
-			
-			
-						<!-- 후기 상세 모달 끝 -->
-						
-						
-						
-						
 						
 					</c:forEach>
 				</div>
 
 				<div
-					class="d-grid d-sm-flex col-11 justify-content-center justify-content-sm-center"
+					class="d-grid d-sm-flex col-12 justify-content-center justify-content-sm-center"
 					onclick="loadMoreAjax()">
 					<a class="btn btn-outline-dark rounded-pill btn-lg btn-hover-text">
 						<span class="btn-hover-label label-default">Load more</span> <span
