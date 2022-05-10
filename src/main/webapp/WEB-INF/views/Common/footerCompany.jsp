@@ -65,9 +65,9 @@ if (session.getAttribute("companyId") == null) {
 	            </div>
 	            <div class="col-sm-5 text-sm-end">
 	                <!--Phone-->
-	                <a href="#!" class="fs-6 link-hover-underline">+011(1234) 56789</a><br><br>
+	                <a href="#!" class="fs-6 link-hover-underline">+82 010-8673-3972</a><br><br>
 	                <!--Email-->
-	                <a href="mailto:mail@domain.agency" class="fs-6 link-hover-underline">fiennale@gmail.com</a>
+	                <a href="mailto:mail@domain.agency" class="fs-6 link-hover-underline">Fiennale@gmail.com</a>
 	            </div>
 	        </div>
 	        <hr class="my-4 my-md-5 text-light">

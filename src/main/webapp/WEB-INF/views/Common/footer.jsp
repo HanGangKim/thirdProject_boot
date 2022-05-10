@@ -75,11 +75,10 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							class="width-10x d-block h-auto mx-md-auto" alt=""></a>
 				</div>
 				<div class="col-md-4 order-md-1 mb-3 mb-md-0">
-					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">fiennale@mail.com</a>
+					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">Fiennale@gmail.com</a>
 				</div>
 				<div class="col-md-4 text-md-end order-md-3">
-					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">+01
-						123-4567-890</a>
+					<a href="mailto:mail@domain.com" class="fs-4 link-hover-underline">+82 010-8673-3972</a>
 				</div>
 			</div>
 			<hr class="my-5 my-lg-7">
