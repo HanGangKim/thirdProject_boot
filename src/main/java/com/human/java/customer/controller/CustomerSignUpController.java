@@ -52,7 +52,7 @@ public class CustomerSignUpController {
 	* @throws : 따로 없음 
 	* @exception : 따로 없음 
 	**/
-	@RequestMapping("")
+	@RequestMapping("customerInsert.do")
 	public ModelAndView customerInsert(CustomerVO vo ) {
 	
 		int result = customerService.customerInsert(vo);
