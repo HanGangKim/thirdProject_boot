@@ -62,7 +62,7 @@ if (session.getAttribute("userId") == null) {
 <!-- Main CSS -->
 <link href="/resources/css/theme-shop.min.css" rel="stylesheet">
 
-<title>MasterPage</title>
+<title>Fiennale - Master</title>
 </head>
 
 <style>
@@ -72,6 +72,11 @@ body {
 
 .card {
 	border: 0px;
+}
+
+element.style {
+    width: 600px;
+    margin-right: 16px;
 }
 </style>
 
@@ -148,14 +153,16 @@ body {
 						<div class="swiper-container swiper-projects overflow-visible">
 							<div class="swiper-wrapper">
 
-								<!--Swiper-slide-->
+								<!-- 예매율 확인 카드 -->
 								<div class="swiper-slide">
-									<!-- <a href="/master/CheckReservation.do" class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card"> -->
-										<a href="#" onclick="alertPass()"  class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
+									<a href="/master/CheckReservation.do"
+										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
+
 										<img src="/resources/img/master/masterGraph.jpg" alt=""
-										class="img-fluid w-100 img-zoom" style="height: 555px">
-										<div
-											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+										class="img-fluid w-100 img-zoom" style="height: 550px">
+
+
+										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">
 												<div class="card-hover-2-title">
 													<h4 class="fs-2 mb-2">Reservation</h4>
@@ -172,23 +179,17 @@ body {
 
 									</a>
 								</div>
-								<script type="text/javascript">
-								function alertPass(){
-									alert("허가되지 않은 접근입니다.\n열람을 위해서는 개발팀(031-0000-0000)으로 연락해 주시기 바랍니다.")
-								}
-								</script>
 
-								<!--Swiper-slide-->
+								<!-- 업체 승인 카드 -->
 								<div class="swiper-slide">
 									<a href="/master/approveCompany.do"
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 
 										<img src="/resources/img/master/masterCompany4.jpg" alt=""
-										class="img-fluid w-100 img-zoom" style="height: 555px">
+										class="img-fluid w-100 img-zoom" style="height: 550px">
 
 
-										<div
-											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">
 												<div class="card-hover-2-title">
 													<h4 class="fs-2 mb-2">Company</h4>
@@ -206,15 +207,14 @@ body {
 								</div>
 
 
-								<!--Swiper-slide-->
+								<!-- 전시회 등록 승인 카드 -->
 								<div class="swiper-slide">
 									<a href="/master/approveExhibition.do"
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 										<img src="/resources/img/master/masterExhibition.jpg" alt=""
-										class="img-fluid img-zoom" style="height: 555px">
+										class="img-fluid img-zoom" style="height: 550px">
 
-										<div
-											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">
 												<div class="card-hover-2-title">
 													<h4 class="fs-2 mb-2">Exhibition</h4>
@@ -231,17 +231,16 @@ body {
 									</a>
 								</div>
 
-								<!--Swiper-slide-->
+								<!-- 승인 거절 리스트 카드 -->
 								<div class="swiper-slide">
 									<a href="/master/checkDnRSelect.do"
 										class="text-white bg-dark position-relative d-block overflow-hidden card-hover-2 card">
 
 										<img src="/resources/img/master/masterList2.jpg" alt=""
-										class="img-fluid w-100 img-zoom" style="height: 555px">
+										class="img-fluid w-100 img-zoom" style="height: 550px">
 
 
-										<div
-											class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
+										<div class="card-hover-2-overlay position-absolute start-0 top-0 w-100 h-100 d-flex px-4 py-5 flex-column justify-content-between">
 											<div class="card-hover-2-header w-100">
 												<div class="card-hover-2-title">
 													<h4 class="fs-2 mb-2">D&R List</h4>
@@ -268,91 +267,88 @@ body {
 				</div>
 			</div>
 		</section>
-					
-
 	</main>
 
-
-
-
-	<!-- begin Back to Top button -->
-	<!-- scripts -->
-	<script src="/resources/js/theme.bundle.js"></script>
-	<!--Mastert Slider start (Include jquery before master slider js)-->
-	<script src="/resources/vendor/node_modules/js/jquery.min.js"></script>
-	<script src="/resources/vendor/masterslider/jquery.easing.min.js"></script>
-	<script src="/resources/vendor/masterslider/masterslider.min.js"></script>
-	<script>
-		var slider = new MasterSlider();
-		slider.setup('masterslider', {
-			width : 1140,
-			height : 660,
-			minHeight : 400,
-			space : 0,
-			start : 1,
-			grabCursor : false,
-			layout : "fullwidth",
-			wheel : false,
-			autoplay : true,
-			instantStartLayers : true,
-			loop : true,
-			view : "basic",
-			instantStartLayers : true,
-		});
-		slider.control('arrows');
-	</script>
-
-
-	<!--Swiper slider-->
-
-	<script src="/resources/vendor/node_modules/js/swiper-bundle.min.js"></script>
-	<script>
-		//swiper-3
-		var swiperProjects = new Swiper(".swiper-projects", {
-			autoHeight : true,
-			spaceBetween : 16,
-			breakpoints : {
-				640 : {
-					slidesPerView : 1,
-					spaceBetween : 16
-				},
-				768 : {
-					slidesPerView : 2,
-					spaceBetween : 16
-				},
-				1024 : {
-					slidesPerView : 2,
-					spaceBetween : 16
-				}
-			},
-			pagination : {
-				el : ".swiperProjects-pagination",
-				clickable : true
-			},
-			navigation : {
-				nextEl : ".swiperProjects-button-next",
-				prevEl : ".swiperProjects-button-prev"
-			}
-		});
-		//swiper-auto
-		var swiperAuto = new Swiper(".swiper-testimonials", {
-			slidesPerView : "auto",
-			loop : true,
-			centeredSlides : true,
-			spaceBetween : 16,
-			effect : "fade",
-			grabCursor : true,
-			pagination : {
-				el : ".swiperAuto-pagination",
-				clickable : true,
-			},
-			navigation : {
-				nextEl : ".swiperAuto-button-next",
-				prevEl : ".swiperAuto-button-prev",
-			}
-		});
-	</script>
 </body>
+
+
+<!-- scripts -->
+<script src="/resources/js/theme.bundle.js"></script>
+<!--Mastert Slider start (Include jquery before master slider js)-->
+<script src="/resources/vendor/node_modules/js/jquery.min.js"></script>
+<script src="/resources/vendor/masterslider/jquery.easing.min.js"></script>
+<script src="/resources/vendor/masterslider/masterslider.min.js"></script>
+
+<!-- 슬라이더 스크립트 -->
+<script>
+	var slider = new MasterSlider();
+	slider.setup('masterslider', {
+		width : 1140,
+		height : 660,
+		minHeight : 400,
+		space : 0,
+		start : 1,
+		grabCursor : false,
+		layout : "fullwidth",
+		wheel : false,
+		autoplay : true,
+		instantStartLayers : true,
+		loop : true,
+		view : "basic",
+		instantStartLayers : true,
+	});
+	slider.control('arrows');
+</script>
+
+
+<!-- 슬라이더 스크립트 -->
+<script src="/resources/vendor/node_modules/js/swiper-bundle.min.js"></script>
+<script>
+	//swiper-3
+	var swiperProjects = new Swiper(".swiper-projects", {
+		autoHeight : true,
+		spaceBetween : 16,
+		breakpoints : {
+			640 : {
+				slidesPerView : 1,
+				spaceBetween : 16
+			},
+			768 : {
+				slidesPerView : 2,
+				spaceBetween : 16
+			},
+			1024 : {
+				slidesPerView : 2,
+				spaceBetween : 16
+			}
+		},
+		pagination : {
+			el : ".swiperProjects-pagination",
+			clickable : true
+		},
+		navigation : {
+			nextEl : ".swiperProjects-button-next",
+			prevEl : ".swiperProjects-button-prev"
+		}
+	});
+	//swiper-auto
+	var swiperAuto = new Swiper(".swiper-testimonials", {
+		slidesPerView : "auto",
+		loop : true,
+		centeredSlides : true,
+		spaceBetween : 16,
+		effect : "fade",
+		grabCursor : true,
+		pagination : {
+			el : ".swiperAuto-pagination",
+			clickable : true,
+		},
+		navigation : {
+			nextEl : ".swiperAuto-button-next",
+			prevEl : ".swiperAuto-button-prev",
+		}
+	});
+</script>
 
 </html>
 
