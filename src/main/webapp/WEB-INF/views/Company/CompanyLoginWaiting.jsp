@@ -62,7 +62,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 	
 	<main class="main-content " id="main-content">
 		<section class="position-relative ">
-			<div class="container pt-12  pb-8  pb-lg-16 ">
+			<div class="container pt-12 col-11 pb-8  pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
 					<div class="col-xl-4">
 						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">

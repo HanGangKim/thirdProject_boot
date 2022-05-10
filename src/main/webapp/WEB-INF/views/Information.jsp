@@ -80,7 +80,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
           fill="currentColor" />
       </svg>
 
-      <div class="container pt-14 pb-9 position-relative z-index-1">
+      <div class="container col-11 pt-14 pb-9 position-relative z-index-1">
         <div class="row pt-lg-5 pb-7 align-items-center">
           <div class="col-lg-10 mx-auto text-center">
             <h1 class="display-2 mb-4">
@@ -105,7 +105,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
     <!-- 소개 -->
     <section class="position-relative overflow-hidden" id="next">
-      <div class="container py-9 py-lg-11">
+      <div class="container col-11 py-9 py-lg-11">
 
         <!--김한수-->
         <div class="row justify-content-md-around mb-7 mb-lg-11 align-items-center">

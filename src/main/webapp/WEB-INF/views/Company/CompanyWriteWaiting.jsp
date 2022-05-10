@@ -76,7 +76,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 		<!-- ./페이지 헤더 -->
 		
 		<section class="position-relative ">
-			<div class="container pt-12 pb-lg-16 ">
+			<div class="container col-11 py-12 pt-12 pb-lg-16 ">
 				<div class="row pt-lg-5 pb-5 justify-content-center text-center">
 					<div class="col-xl-4">
 						<div class="width-8x height-8x rounded-circle position-relative bg-dark text-white flex-center mb-5">

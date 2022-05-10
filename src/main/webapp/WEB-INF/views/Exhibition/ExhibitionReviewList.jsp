@@ -154,7 +154,7 @@ if (session.getAttribute("userId") == null) {
 									<a href="#!" class="d-block overflow-hidden rounded-top-4"
 										data-bs-target="#modal-pay-bar-${vo.review_id}"
 										data-bs-toggle="modal"> 
-										<img src="${vo.exhibition_image}" class="img-fluid w-100" alt="${vo.exhibition_title}" style="max-height:550px;">
+										<img src="${vo.exhibition_image}" class="img-fluid w-100" alt="${vo.exhibition_title}" style="max-height:500px;">
 									</a>
 								</div>
 
@@ -356,7 +356,7 @@ if (session.getAttribute("userId") == null) {
 		str += '<div class="mb-0" onclick="allReviewDetail()">';
 		str += '<a href="#!" class="d-block overflow-hidden rounded-top-4" data-bs-target="#modal-pay-bar-'
 				+ vo.review_id + '" data-bs-toggle="modal">';
-		str += '<img src="' + vo.exhibition_image + '" class="img-fluid w-100" alt="' + vo.exhibition_title + '" style="max-height:550px;"></a></div>';
+		str += '<img src="' + vo.exhibition_image + '" class="img-fluid w-100" alt="' + vo.exhibition_title + '" style="max-height:500px;"></a></div>';
 		str += '<div class="card-body overflow-hidden p-4 px-lg-5 flex-grow-1">';
 		str += '<a href="#!" class="text-dark d-block mb-4" data-bs-target="#modal-pay-bar-'
 				+ vo.review_id

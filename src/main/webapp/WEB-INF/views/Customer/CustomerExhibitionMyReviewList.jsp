@@ -119,7 +119,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 							
 							<!-- 내용 -->
-							<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
+							<div class="col-sm-7 py-sm-5 py-5 col-12 col-lg-6 offset-lg-1 px-5">
 								<a href="#" class="mb-3 d-block text-dark">
 									<h4 class="text-truncate">${vo.exhibition_title}</h4>
 								</a>
@@ -201,7 +201,7 @@ System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
 							</div>
 							
 							<!-- 내용 -->
-							<div class="col-sm-7 py-sm-5 col-12 col-lg-6 offset-lg-1 px-5">
+							<div class="col-sm-7 py-sm-5 py-5 col-12 col-lg-6 offset-lg-1 px-5">
 								<a class="mb-3 d-block text-dark">
 									<h4 class="text-truncate">${nullCheck}</h4>
 								</a>
