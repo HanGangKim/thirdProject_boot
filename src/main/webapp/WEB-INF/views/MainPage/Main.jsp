@@ -199,9 +199,9 @@
 						<div class="col-md-6 col-11 col-lg-3 mb-4">
 							<!--Card-product-->
 							<div class="card hover-shadow-lg overflow-hidden hover-lift-lg card-product border-0" title="${vo.exhibition_title}">
-								<div class="card-product-header px-5 p-4 d-block overflow-hidden">
+								<div class="card-product-header px-5 p-4 d-block overflow-hidden text-center">
 									<!--Product image-->
-									<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}"> <img src="${vo.exhibition_image}" class="img-fluid" alt="Image Loading..."> </a>
+									<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}"> <img src="${vo.exhibition_image}"  style="height:340px;" class="img-fluid" alt="Image Loading..."> </a>
 								</div>
 								<div class="card-product-body px-4 pb-4 text-center">
 									<a href="/exhibition/ExhibitionDetail.do?id=${vo.exhibition_id}" class="h6 d-block position-relative mb-2 text-dark text-truncate">${vo.exhibition_title}</a>

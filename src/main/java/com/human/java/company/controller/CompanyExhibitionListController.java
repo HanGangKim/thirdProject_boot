@@ -64,6 +64,11 @@ public class CompanyExhibitionListController {
 	**/
 	@RequestMapping("companyExhibitionDetail.do")
 	public String exhibitionExhibitionDetail(ExhibitionVO vo , Model model ) {
+		
+		if(vo.getCompany_id()==null) {
+			return "redirect:/company/CompanyMain.do";
+		}
+		
 		model.addAttribute("CompanyExhibition", companyService.getExhibitionCompanyDetail(vo));
 		return "/Company/CompanyExhibitionWriteUpdate";
 	}

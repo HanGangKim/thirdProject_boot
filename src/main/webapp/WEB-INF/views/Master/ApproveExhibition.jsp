@@ -2,6 +2,24 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%
+Object masterId = session.getAttribute("masterId");
+Object masterName = session.getAttribute("masterName");
+// 세션 연결
+if (session.getAttribute("masterId") == null) {
+	// 세션 연결에 실패하면 null	
+	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	System.out.println("세션연결 실패:" + masterId);
+	System.out.println("세션연결 실패:" + masterName);
+	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	response.sendRedirect("/start/NoneMemberMain.do");
+} else {
+	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+	System.out.println("세션연결 성공:" + masterId);
+	System.out.println("세션연결 성공:" + masterName);
+	System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$");
+}
+%>
 <!doctype html>
 <html lang="en">
 

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,9 +32,15 @@ public class CustomerWishController {
 	* @exception : 찜목록이 따로 없을 경우 기본값 nullCheck 출력  
 	**/
 	@RequestMapping("customerWishSelectList.do")
-	public ModelAndView SearchWish(ExhibitionVO vo, @RequestParam("id") String id, WishListVO wl, HttpServletRequest request) {
-
+	public ModelAndView SearchWish(ExhibitionVO vo, @Nullable @RequestParam("id") String id, WishListVO wl, HttpServletRequest request) {
 		ModelAndView mv = new ModelAndView();
+		
+		
+		if(!(id instanceof String)) {
+			mv.setViewName("redirect:/index.do");
+			return mv;
+		}
+		
 		mv.setViewName("/Customer/CustomerWishList");		
 		List<WishListVO> li = customerService.wishListSelect(vo, id, wl, request);
 		

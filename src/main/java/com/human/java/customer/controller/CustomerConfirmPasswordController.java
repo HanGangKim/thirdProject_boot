@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
@@ -41,11 +42,11 @@ public class CustomerConfirmPasswordController {
 	**/
 	@RequestMapping("customerConfirmPassword.do")
 	public ModelAndView customerconfirm(CustomerVO vo, HttpSession session) {
-		System.out.println("CustomerConfirmPasswod 메소드 호출");
-		System.out.println("CustomerVO : " + ToStringBuilder.reflectionToString(vo));
+		
 		CustomerVO result = customerService.customerLogin(vo);
 		ModelAndView mv = new ModelAndView();
 		
+	
 		if (result==null) {
 			System.out.println("패스워드 확인 실패");
 			mv.setViewName("/Customer/CustomerConfirmPass");
@@ -63,7 +64,7 @@ public class CustomerConfirmPasswordController {
 			
 			mv.addObject("vo", customerService.customerConfirmPassword(vo));
 			
-			mv.setViewName("/Customer/CustomerChangeInfo");
+			mv.setViewName("redirect:/customer/CustomerChangeInfo.do");
 		}
 		return mv;
 	}

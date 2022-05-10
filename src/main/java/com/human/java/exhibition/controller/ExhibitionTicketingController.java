@@ -66,8 +66,13 @@ public class ExhibitionTicketingController {
 	* @exception : 따로 없음
 	**/
 	@RequestMapping("ExhibitionTicketingSelect.do")
-	public String ticketSelect(Model model, @RequestParam("id") String id , @Nullable @RequestParam("ticketing_id") String ticketing_id , HttpSession session) {
-
+	public String ticketSelect(Model model, @Nullable @RequestParam("id") String id , @Nullable @RequestParam("ticketing_id") String ticketing_id , HttpSession session) {
+		
+		if(!(id instanceof String)) {
+			return "redirect:/index.do";
+		}
+		
+		
 		HashMap map = new HashMap();
 		map.put("id", id);
 		List<TicketingVO> li =  exhibitionService.ticketSelect(map, id , ticketing_id);

@@ -46,30 +46,21 @@ public class CustomerLoginController {
 
 		if (result == null) {
 			System.out.println("로그인 실패");
-			mv.setViewName("/Customer/CustomerLoginFail");
+			mv.setViewName("redirect:/customer/CustomerLoginFail");
 			return mv;
 
 		}else if((result.getCustomer_id()).equals("admin")&(result.getCustomer_password()).equals("admin")&(result.getCustomer_flag().equals("M"))){	
 			
-			System.out.println("Master : [" + result.getCustomer_id() + "]" + "로그인 성공");
-			
-			// 운영자 세션 부여
 			session.setAttribute("masterName", result.getCustomer_name());
 			session.setAttribute("masterId", result.getCustomer_id());	
 			session.setAttribute("masterSessionTime", new Date().toLocaleString());
 			
-			mv.addObject("voRand", exhibitionService.randomExhibition(exvo));
-			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
-			mv.addObject("volast", exhibitionService.lastExhibition(exvo));
-			mv.addObject("top3" , exhibitionService.top3Exhibition(exvo));
-			mv.setViewName("/Master/MasterPage");
+			mv.setViewName("redirect:/master/MasterPage.do");
 			
 			
 			return mv;
 		} else {
-			// CompanyVO 확인
-			System.out.println("[" + result.getCustomer_id() + "]" + "로그인 성공");
-			
+					
 			session.setAttribute("userName", result.getCustomer_name());
 			session.setAttribute("userId", result.getCustomer_id());
 			session.setAttribute("userPh" , result.getCustomer_ph());
@@ -77,14 +68,9 @@ public class CustomerLoginController {
 			session.setAttribute("userGender", result.getCustomer_gender());
 			session.setAttribute("userAge", result.getCustomer_age());
 			session.setAttribute("userPass" , result.getCustomer_password());
-			
-			// 세션시간			
 			session.setAttribute("sessionTime", new Date().toLocaleString());
-			mv.addObject("voRand", exhibitionService.randomExhibition(exvo));
-			mv.addObject("vo", exhibitionService.comingExhibition(exvo));
-			mv.addObject("volast", exhibitionService.lastExhibition(exvo));
-			mv.addObject("top3" , exhibitionService.top3Exhibition(exvo));
-			mv.setViewName("/MainPage/Main");
+			
+			mv.setViewName("redirect:/start/NoneMemberMain.do");
 
 			return mv;
 		}

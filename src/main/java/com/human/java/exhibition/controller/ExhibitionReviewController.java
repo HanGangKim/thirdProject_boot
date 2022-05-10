@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -78,7 +79,11 @@ public class ExhibitionReviewController {
 	**/
 	// 나의 리뷰 리스트
 	@RequestMapping("getMyReviewList.do")
-	public String getMyReviewList(Model model, @RequestParam("id") String id) {
+	public String getMyReviewList(Model model, @Nullable @RequestParam("id") String id) {
+		
+		if(!(id instanceof String)) {
+			return "redirect:/index.do";
+		}
 
 		HashMap map = new HashMap();
 		map.put("id", id);
