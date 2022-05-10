@@ -46,7 +46,7 @@ public class CustomerLoginController {
 
 		if (result == null) {
 			System.out.println("로그인 실패");
-			mv.setViewName("redirect:/customer/CustomerLoginFail");
+			mv.setViewName("	");
 			return mv;
 
 		}else if((result.getCustomer_id()).equals("admin")&(result.getCustomer_password()).equals("admin")&(result.getCustomer_flag().equals("M"))){	
