@@ -148,7 +148,7 @@ if (session.getAttribute("userId") == null) {
 				<!--권민성-->
 				<div class="row justify-content-md-around mb-7 mb-lg-11 align-items-center">
 					<div class="col-md-6 mb-5 mb-md-0 order-md-last" data-aos="fade-left" data-aos-delay="100">
-						<img src="/resources/img/960x900/4.jpg" class="img-fluid rounded-blob shadow-lg" alt="">
+						<img src="/resources/img/960x900/민성.png" class="img-fluid rounded-blob shadow-lg" alt="">
 					</div>
 					<div class="col-md-4 order-md-1" data-aos="fade-right" data-aos-delay="100">
 						<div class="d-flex align-items-center mb-4">
@@ -189,17 +189,17 @@ if (session.getAttribute("userId") == null) {
 				<!--성유나-->
 				<div class="row justify-content-md-around mb-7 mb-lg-11 align-items-center">
 					<div class="col-md-6 mb-5 mb-md-0" data-aos="fade-left" data-aos-delay="100">
-						<img src="/resources/img/960x900/3.jpg" class="img-fluid rounded-blob shadow-lg" alt="">
+						<img src="/resources/img/960x900/유나.png" class="img-fluid rounded-blob shadow-lg" alt="">
 					</div>
 					<div class="col-md-4" data-aos="fade-right" data-aos-delay="150">
 						<div class="d-flex align-items-center mb-4">
 							<h1 class="mb-0 display-6">Youna Seong</h1>
 						</div>
 						<!--/.End heading-->
-						<p class="mb-4"><b>"사용자를 위한 깔끔한 UI"</b><br>
+						<p class="mb-4"><b>"BootStrap"</b><br>
 							블라블라
 							<br><br>
-							<b>"BootStrap"</b><br>
+							<b>"사용자를 위한 깔끔한 UI"</b><br>
 							블라블라</p>
 						<ul class="list-unstyled text-dark">
 							<li class="d-flex align-items-center mb-3">
@@ -220,7 +220,7 @@ if (session.getAttribute("userId") == null) {
 							</li>
 							<li class="d-flex align-items-center">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>A-jax</span>
+								<span>A-jax &amp; Jquery</span>
 							</li>
 						</ul>
 					</div>
@@ -230,39 +230,32 @@ if (session.getAttribute("userId") == null) {
 				<!--오정민-->
 				<div class="row justify-content-lg-around mb-7 mb-lg-11 align-items-center">
 					<div class="col-md-6 mb-5 mb-md-0 order-md-last" data-aos="fade-left" data-aos-delay="100">
-						<img src="/resources/img/960x900/2.jpg" class="img-fluid rounded-blob shadow-lg" alt="">
+						<img src="/resources/img/960x900/정민.png" class="img-fluid rounded-blob shadow-lg" alt="">
 					</div>
 					<div class="col-md-4 order-md-1" data-aos="fade-right" data-aos-delay="200">
 						<div class="d-flex align-items-center mb-4">
 							<h1 class="mb-0 display-6">Jeongmin Oh</h1>
 						</div>
 						<!--/.End heading-->
-						<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
-							adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate
-							velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p class="mb-4"><b>"전시회 리뷰 크롤링 및 워드 클라우드 구현"</b><br> 
+							전시회 데이터들을 하나하나 작성할 수 없어서, 다양한 전시회 리뷰 데이터들을 크롤링 하였습니다. 
+							또한 크롤링 한 전시회 리뷰 데이터들을 모아서 다양한 의견들과 많이 사용한 단어 순으로 워드 클라우드를 구현했습니다.
+							<br><br>
+							<b>"챗봇 기능 구현"</b><br>
+							사이트 사용자들이 전시회의 전시 기간과 전시장소를 궁금해할 수 있기 때문에 챗봇을 구현하여 질문을 하면 챗봇을 이용해서
+							답할 수 있도록 파이썬을 이용하여 챗봇을 구현했습니다.</p>
 						<ul class="list-unstyled text-dark mb-0">
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Digital marketing</span>
+								<span>Java</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Print advertising</span>
+								<span>Python &amp; Visualizing</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Campaign visuals</span>
-							</li>
-							<li class="d-flex align-items-center mb-3">
-								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Editorial design</span>
-							</li>
-							<li class="d-flex align-items-center">
-								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Label and package design</span>
+								<span>Chatbot</span>
 							</li>
 						</ul>
 					</div>
@@ -272,39 +265,44 @@ if (session.getAttribute("userId") == null) {
 				<!--정은성-->
 				<div class="row justify-content-md-around mb-7 mb-lg-11 align-items-center">
 					<div class="col-md-6 mb-5 mb-md-0" data-aos="fade-left" data-aos-delay="100">
-						<img src="/resources/img/960x900/3.jpg" class="img-fluid rounded-blob shadow-lg" alt="">
+						<img src="/resources/img/960x900/은성.png" class="img-fluid rounded-blob shadow-lg" alt="">
 					</div>
 					<div class="col-md-4" data-aos="fade-right" data-aos-delay="150">
 						<div class="d-flex align-items-center mb-4">
 							<h1 class="mb-0 display-6">Eunseong Jeong</h1>
 						</div>
 						<!--/.End heading-->
-						<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
-							adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate
-							velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						<p class="mb-4"><b>사용자(user) 중심의 인터페이스</b><br>
+							"계속 사용하고 싶은 웹페이지를 만들자"<br>
+							단순히 프로젝트성이 아닌 진짜 유저의 마음이 되어서 페이지를 개발했습니다. 최소한의 텍스트와 대비되는 많은 시각적인 임팩트,
+							스크롤 구동방식의 화면 구성과 심플하면서 기능에 충실한 콘텐츠까지 사용자들이 어떤 면에서 매력적으로 느낄 수 있는지에 대해
+							주로 고민했고, 웹보다 모바일에서 접근성이 높은 사용자들의 편의를 파악해 반응형 웹페이지의 화면구성(CSS)을 디자인하였습니다.
+							<br><br>
+							<b>마스터 페이지 전반적인 개발</b><br>
+							"소통하는 개발자가 되자"<br>
+							저는 프런트엔드 개발자를 꿈꾸지만 프로그램의 전체적인 구조 파악을 위해 마스터 페이지의 MVC 패턴을 개발하였고, 이로 인해
+							화면에서 서버(데이터)와의 연결까지 구현하게 되었습니다. 또한 JS를 이용한 업체 및 전시회 승인, A-jax를 이용한 승인/거절
+							리스트의 비동기 검색 기능과 더불어 다양한 CSS의 조합으로 화면 구성에 있어 편의성과 심미성을 동시에 추구하고자 하였습니다.</p>
 						<ul class="list-unstyled text-dark mb-0">
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Content creation</span>
-							</li>
-							<li class="d-flex align-items-center mb-3">
-								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i>
-								<span>Copywriting</span>
+								<span>Web design</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Content analysis</span>
+								<span>UI/UX design &amp; prototyping</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Content strategy</span>
+								<span>Frontend &amp; Backend Coding</span>
+							</li>
+							<li class="d-flex align-items-center mb-3">
+								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
+								<span>HTML &amp; CSS &amp; JS</span>
 							</li>
 							<li class="d-flex align-items-center">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Content management systems (CMS)</span>
+								<span>A-jax &amp; Jquery</span>
 							</li>
 						</ul>
 					</div>
