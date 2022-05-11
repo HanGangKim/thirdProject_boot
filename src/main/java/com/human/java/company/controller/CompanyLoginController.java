@@ -50,8 +50,7 @@ public class CompanyLoginController {
 
 		// 로그인 실패
 		if (result == null) {
-			
-			mv.setViewName("/Company/CompanyLoginFail");
+			mv.setViewName("redirect:/company/CompanyLoginFail.do");
 			return mv;
 
 		// 로그인 성공

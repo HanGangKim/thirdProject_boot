@@ -159,10 +159,10 @@ if (session.getAttribute("masterId") == null) {
 
 
 										<button type="button" class="btn btn-primary" id="btnHover"
-											onclick="exhibitionApproval('${vo.exhibition_title}','${status.count}')">승인</button>
+											onclick="exhibitionApproval('${vo.exhibition_id}','${status.count}')">승인</button>
 
 										<button type="button" class="btn btn-primary" id="btnHover"
-											onclick="exhibitionRefusal('${vo.exhibition_title}','${status.count}')">거절</button>
+											onclick="exhibitionRefusal('${vo.exhibition_id}','${status.count}')">거절</button>
 
 
 										<br> <input type="text" class="approveExhibitionInput"
@@ -180,17 +180,16 @@ if (session.getAttribute("masterId") == null) {
 				<!-- 승인 -->
 				<form action="/master/masterExhibitionUpdate.do" method="get"
 					name="exfrmS">
-					<input name="exhibition_title" id="success_extitle" type="text"
-						hidden> <input name="exhibition_flag" id="success_exflag"
+					<input name="exhibition_id" id="success_extitle" type="text" hidden> 
+					<input name="exhibition_flag" id="success_exflag"
 						type="text" hidden>
 				</form>
 
 
 				<!-- 거절 -->
 				<form action="/master/masterExhibitionUpdate.do" name="exfrmR">
-					<input name="exhibition_title" id="recheck_extitle" type="text"
-						hidden> <input name="exhibition_flag" id="recheck_exflag"
-						type="text" hidden>
+					<input name="exhibition_id" id="recheck_extitle" type="text" hidden> 
+					<input name="exhibition_flag" id="recheck_exflag" type="text" hidden>
 				</form>
 			</div>
 		</section>
