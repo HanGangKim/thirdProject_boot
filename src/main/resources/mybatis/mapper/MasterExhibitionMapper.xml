@@ -5,7 +5,7 @@
 
 <mapper namespace="com.human.java.mapper.MasterExhibitionMapper">
 	<select id="masterExhibition" resultType="com.human.java.domain.MasterExhibitionVO">
-		SELECT EXHIBITION_TITLE, EXHIBITION_TOTAL_DATE, EXHIBITION_IMAGE
+		SELECT *
 		FROM EXHIBITION_INFO
 		WHERE EXHIBITION_FLAG = 'W'
 	</select>
@@ -13,7 +13,7 @@
 	<update id="masterExhibitionUpdate" parameterType="com.human.java.domain.MasterExhibitionVO">
 		UPDATE EXHIBITION_INFO
 		SET EXHIBITION_FLAG = #{exhibition_flag}
-		WHERE EXHIBITION_TITLE = #{exhibition_title}
+		WHERE EXHIBITION_ID = #{exhibition_id}
 	</update>
 	
 	<select id="masterExhibitionDR" resultType="com.human.java.domain.MasterExhibitionVO">
