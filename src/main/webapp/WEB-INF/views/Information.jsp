@@ -86,11 +86,8 @@ if (session.getAttribute("userId") == null) {
 			<div class="container col-11 pt-14 pb-9 position-relative z-index-1">
 				<div class="row pt-lg-5 pb-7 align-items-center">
 					<div class="col-lg-10 mx-auto text-center">
-						<h1 class="display-2 mb-4">We make good designs for Web and
-							Mobile</h1>
-						<p class="mb-11 mb-lg-14 lead w-lg-80 mx-auto">Creative
-							designs and user-friendly interfaces can contribute to your
-							business success in web and mobile</p>
+						<h1 class="display-2 mb-4">Drawing Detailed Dreams</h1>
+						<p class="mb-11 mb-lg-14 lead w-lg-80 mx-auto">꿈꾸는 것을 상세하게 그리는 것. 피엔날레가 달려온 과정입니다.</p>
 						<a href="#next"
 							class="text-muted width-8x height-8x shadow bg-white rounded-circle flex-center d-flex text-center mx-auto">
 							<div class="link-arrow-bounce">
@@ -112,26 +109,27 @@ if (session.getAttribute("userId") == null) {
 				<!--김한수-->
 				<div class="row justify-content-md-around mb-7 mb-lg-11 align-items-center">
 					<div class="col-md-6 mb-5 mb-md-0" data-aos="fade-left" data-aos-delay="100">
-						<img src="/resources/img/960x900/1.jpg" class="img-fluid rounded-blob shadow-lg" alt="">
+						<img src="/resources/img/960x900/한수.png" class="img-fluid rounded-blob shadow-lg" alt="">
 					</div>
 					<div class="col-md-4" data-aos="fade-right">
 						<div class="d-flex align-items-center mb-4">
 							<h1 class="mb-0 display-6">Hansoo Kim</h1>
 						</div>
 						<!--/.End heading-->
-						<p class="mb-4">시작과 끝맺음이 확실한 개발자가 되고 싶습니다.<br>피엔날레의 조장 김한수입니다.
-							<br><br>
-							<b>FTP 통신 &amp; 스케줄러 ( 서버의 분산 )</b><br>
-							"자원은 무한하지 않습니다."<br>
-							FTP , File Transfer Protocol의 약자로 서버와 클라이언트 사이의 파일전송을 위한 프로토콜을 지칭하는 본 통신방식은 제가 이번 프로젝트에서 담당한 사이트의 핵심기술 중 하나입니다.
+						<p class="mb-4">
+							<b>" 자원은 무한하지 않습니다. "</b><br>
+							FTP는 서버와 클라이언트 사이의 파일전송을 위한 프로토콜을 지칭하는 본 통신방식은 제가 이번 프로젝트에서 담당한 사이트의 핵심기술 중 하나입니다.
 							FTP 통신방식에서 아이디어를 얻어 단순히 호스팅 서버의 사진을 저장하는 것이 아닌 2차 서버로 이미지를 저장하는 로직을 구현하였습니다.
-							위 방식을 이용, 호스팅 서버의 부담을 줄여주었으며 추가적으로 java의 '스케줄러 라이브러리' , '크론'을 통해 일정 주기가 지난 파일을 삭제하는 기술을 적용하였습니다.
+							위 방식을 이용, 호스팅 서버의 부담을 줄여주었으며 추가적으로 Java의 '스케줄러 라이브러리' , '크론'을 통해 일정 주기가 지난 파일을 삭제하는 기술을 적용하였습니다.
 							<br><br>
-							<b>레거시, 부트 마이그레이션 &amp; 버전 관리</b><br>
-							"다양한 경험은 강력한 경쟁력이 될 수 있다고 생각하였습니다."<br>
+							<b>" 다양한 경험은 강력한 경쟁력이 될 수 있다고 생각하였습니다. "</b><br>
 							다양한 환경과 여러 버전을 관리하는 경험은 언제 어디서든 개발을 할 수 있는 개발자가 되기 위해 반드시 거쳐야 하는 과정일 것입니다.
-							저는 이번 프로젝트를 통해 Spring 프레임워크로 개발한 프로젝트를 발전된 프레임워크 Spring boot로 마이그레이션을 진행하면서 의존성 주입, 빈 객체 설정, 다양한 어노테이션을 사용하고 응용하였습니다.</p>
+							저는 이번 프로젝트를 통해 Spring 프레임워크로 개발한 프로젝트를 발전된 프레임워크 Spring Boot로 마이그레이션을 진행하면서 의존성 주입, 빈 객체 설정, 다양한 어노테이션을 사용하고 응용하였습니다.</p>
 						<ul class="list-unstyled text-dark">
+							<li class="d-flex align-items-center mb-3">
+								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
+								<span>Leadership</span>
+							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i>
 								 <span>FTP 통신 &amp; 스케줄러</span>
@@ -155,23 +153,23 @@ if (session.getAttribute("userId") == null) {
 							<h1 class="mb-0 display-6">Minsung Kwon</h1>
 						</div>
 						<!--/.End heading-->
-						<p class="mb-4"><b>"이미지 서버 구축 및 호스팅"</b><br>
+						<p class="mb-4"><b>" 이미지 서버 구축 및 호스팅 "</b><br>
 							저장된 이미지의 경로를 가지고 있다면 이미지를 불러오기 쉽기 때문에 별도의 이미지 서버를 호스팅 하여 보다 수월하게 이미지를 관리할 수 있게 하였습니다.
-							또한, 시간이 지나 전시회 정보가 수없이 많아진다면 이미지 파일들 또한 많아지고 비교적 이미지 파일이 크기가 크기 때문에 이미지만을 관리하는 이미지 전용 서버를 따로 하나 더 두었습니다.
+							또한, 시간이 지나 전시회 정보가 수없이 많아진다면 이미지 파일들 또한 많아지고 비교적 이미지 파일의 크기가 크기 때문에 이미지만을 관리하는 이미지 전용 서버를 따로 하나 더 두었습니다.
 							<br><br>
-							<b>"전시회 정보 크롤링 및 MVC 작업"</b><br>
+							<b>" 전시회 정보 크롤링 및 MVC 패턴 설계 "</b><br>
 							프로젝트에 사용할 가 데이터를 수작업으로 만들기 힘들기 때문에 전시회 데이터를 크롤링 하여 전시회 DB에 올려두었습니다.
-							또한, 전시회 정보를 사용자에게 제공하기 위해 메인 페이지, 전시회 상세 페이지 등 전시회 정보가 필요한 부분에 전시회 DB와 연결하여 프런트엔드 영역에 넘겨주는 작업을 진행했습니다.
+							또한, 전시회 정보를 사용자에게 제공하기 위해 메인 페이지, 전시회 상세 페이지 등 전시회 정보가 필요한 부분에 전시회 DB와 연결하여 프런트엔드 영역에 넘겨주는 작업을 진행하였습니다.
 							<br><br>
-							<b>"ERD 설계"</b><br>
-							연관된 데이터끼리 외래 키로 묶어 중복된 데이터 칼럼을 최소화하여, 테이블을 보다 간단하게 만들었고, 테이블 간 join을 용이하게 하여 데이터 접근을 쉽게 하였습니다.
-							속성(Flag) 칼럼을 두어 데이터 관리를 용이하게 했습니다. 
-							같은 데이터라도 인증된 전시회, 그렇지 않은 전시회를 테이블을 따로 두어 설계한다면 테이블의 개수도 많아지고, 
-							관리하기 힘들지만 속성 칼럼을 사용하여 속성값에 따라 테이블 개수가 줄어 데이터관리를 보다 용이하게 했습니다.</p>
+							<b>" ERD 설계 "</b><br>
+							연관된 데이터끼리 외래 키로 묶어 중복된 데이터 칼럼을 최소화하여, 테이블을 보다 간단하게 만들었고, 
+							테이블 간 JOIN을 용이하게 하여 데이터 접근을 쉽게 하였습니다.
+	                     	같은 데이터라도 인증된 전시회, 그렇지 않은 전시회 테이블을 따로 두어 설계한다면 테이블의 개수가 많아져 관리하기 힘들지만
+	                     	속성(Flag) 칼럼을 사용하면 보다 데이터를 수월하게 관리할 수 있게 하였습니다.</p>
 						<ul class="list-unstyled text-dark mb-0">
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Linux</span>
+								<span>Ubuntu</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
@@ -193,26 +191,28 @@ if (session.getAttribute("userId") == null) {
 					</div>
 					<div class="col-md-4" data-aos="fade-right" data-aos-delay="150">
 						<div class="d-flex align-items-center mb-4">
-							<h1 class="mb-0 display-6">Youna Seong</h1>
+							<h1 class="mb-0 display-6">You-na Seong</h1>
 						</div>
 						<!--/.End heading-->
-						<p class="mb-4"><b>"BootStrap"</b><br>
-							블라블라
+						<p class="mb-4">
+							<b>" 효율적인 개발을 위한 다양한 라이브러리 활용 "</b><br>
+							더 나은 프런트엔드 개발자가 되기 위해, HTML &amp; CSS &amp; JS를 조금 더 효율적으로 사용하기 위해
+							프런트엔드 오픈 소스 툴킷인 Bootstrap에 관해 학습하였으며, 프로젝트 전반적인 UI에 해당 기술을 활용해 모바일에 대응할 수 있도록 반응형 웹으로 구현하였습니다.
 							<br><br>
-							<b>"사용자를 위한 깔끔한 UI"</b><br>
-							블라블라</p>
+							<b>" 사용자와 개발자가 만족할 수 있는 웹 "</b><br>
+							프런트엔드 개발자는 사용자와 소통은 물론 백엔드 개발자와의 소통도 중요하다고 생각하여 
+							단순히 껍데기만 화려한 웹이 아닌 백엔드 개발자가 추구하는 방향도 고려한 웹을 디자인하였습니다.
+							핸드폰(모바일) 활용이 잦아진 시대에 Ajax를 활용한 더 보기 버튼을 구현해 페이징을 좀 더 쉽게 하여 사용자의 편의성에 집중했고,
+							전시회 검색, 모달 등 백엔드 개발자가 생각하는 기능들을 웹 곳곳에 녹여내 시각적인 재미까지 더하였습니다.
+							</p>
 						<ul class="list-unstyled text-dark">
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Web design</span>
+								<span>Web Design</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>UI/UX design &amp; prototyping</span>
-							</li>
-							<li class="d-flex align-items-center mb-3">
-								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>App design</span>
+								<span>UI/UX Design &amp; Prototyping</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
@@ -220,7 +220,7 @@ if (session.getAttribute("userId") == null) {
 							</li>
 							<li class="d-flex align-items-center">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>A-jax &amp; Jquery</span>
+								<span>JQuery &amp; Bootstrap &amp; Ajax</span>
 							</li>
 						</ul>
 					</div>
@@ -237,13 +237,17 @@ if (session.getAttribute("userId") == null) {
 							<h1 class="mb-0 display-6">Jeongmin Oh</h1>
 						</div>
 						<!--/.End heading-->
-						<p class="mb-4"><b>"전시회 리뷰 크롤링 및 워드 클라우드 구현"</b><br> 
+						<p class="mb-4"><b>" 전시회 리뷰 크롤링 및 워드 클라우드 구현  "</b><br> 
 							전시회 데이터들을 하나하나 작성할 수 없어서, 다양한 전시회 리뷰 데이터들을 크롤링 하였습니다. 
-							또한 크롤링 한 전시회 리뷰 데이터들을 모아서 다양한 의견들과 많이 사용한 단어 순으로 워드 클라우드를 구현했습니다.
+							또한 크롤링 한 전시회 리뷰 데이터들을 모아서 다양한 의견들과 많이 사용한 단어 순으로 워드 클라우드를 구현하였습니다.
 							<br><br>
-							<b>"챗봇 기능 구현"</b><br>
+							<b>" 챗봇 기능 구현 "</b><br> 
 							사이트 사용자들이 전시회의 전시 기간과 전시장소를 궁금해할 수 있기 때문에 챗봇을 구현하여 질문을 하면 챗봇을 이용해서
-							답할 수 있도록 파이썬을 이용하여 챗봇을 구현했습니다.</p>
+							답할 수 있도록 파이썬을 이용하여 챗봇을 구현하였습니다.
+							<br><br>
+							<b>" 정보수정 기능 구현 MVC 패턴 설계 "</b><br>
+							사용자의 입력된 데이터를 조회, 수정 및 삭제 등 정보 관리 기능을 1차적으로 구현하였고 올바른 데이터 처리를 위한 유효성 검사 작업을 하였습니다.
+							회원 탈퇴의 경우 연관된 데이터들 간의 선후관계를 파악하여 처리되도록 하였습니다.</p>
 						<ul class="list-unstyled text-dark mb-0">
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
@@ -272,29 +276,22 @@ if (session.getAttribute("userId") == null) {
 							<h1 class="mb-0 display-6">Eunseong Jeong</h1>
 						</div>
 						<!--/.End heading-->
-						<p class="mb-4"><b>사용자(user) 중심의 인터페이스</b><br>
-							"계속 사용하고 싶은 웹페이지를 만들자"<br>
-							단순히 프로젝트성이 아닌 진짜 유저의 마음이 되어서 페이지를 개발했습니다. 최소한의 텍스트와 대비되는 많은 시각적인 임팩트,
+						<p class="mb-4"><b>" 사용자(user) 중심의 인터페이스 "</b><br>
+							단순히 프로젝트성이 아닌 진짜 유저의 마음이 되어서 페이지를 개발하였습니다. 최소한의 텍스트와 대비되는 많은 시각적인 임팩트,
 							스크롤 구동방식의 화면 구성과 심플하면서 기능에 충실한 콘텐츠까지 사용자들이 어떤 면에서 매력적으로 느낄 수 있는지에 대해
 							주로 고민했고, 웹보다 모바일에서 접근성이 높은 사용자들의 편의를 파악해 반응형 웹페이지의 화면구성(CSS)을 디자인하였습니다.
 							<br><br>
-							<b>마스터 페이지 전반적인 개발</b><br>
-							"소통하는 개발자가 되자"<br>
-							저는 프런트엔드 개발자를 꿈꾸지만 프로그램의 전체적인 구조 파악을 위해 마스터 페이지의 MVC 패턴을 개발하였고, 이로 인해
-							화면에서 서버(데이터)와의 연결까지 구현하게 되었습니다. 또한 JS를 이용한 업체 및 전시회 승인, A-jax를 이용한 승인/거절
-							리스트의 비동기 검색 기능과 더불어 다양한 CSS의 조합으로 화면 구성에 있어 편의성과 심미성을 동시에 추구하고자 하였습니다.</p>
+							<b>" Flexible Web Development "</b><br>
+							저는 프런트엔드 개발자를 꿈꾸지만 프로그램의 전체적인 구조 파악을 위해 마스터 페이지를 MVC 패턴으로 개발하면서 화면부터 서버(데이터)와의 연결까지 구현하였습니다.
+							또한 JS를 이용한 업체 및 전시회 승인, Ajax를 이용한 승인/거절 리스트의 비동기 검색 기능과 더불어 다양한 CSS의 조합으로 화면 구성에 있어 편의성과 심미성을 동시에 추구하고자 하였습니다.</p>
 						<ul class="list-unstyled text-dark mb-0">
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Web design</span>
+								<span>Web Design</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>UI/UX design &amp; prototyping</span>
-							</li>
-							<li class="d-flex align-items-center mb-3">
-								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>Frontend &amp; Backend Coding</span>
+								<span>UI/UX Design &amp; Prototyping</span>
 							</li>
 							<li class="d-flex align-items-center mb-3">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
@@ -302,7 +299,7 @@ if (session.getAttribute("userId") == null) {
 							</li>
 							<li class="d-flex align-items-center">
 								<i class="bx bx-check-circle fs-4 opacity-50 me-2"></i> 
-								<span>A-jax &amp; Jquery</span>
+								<span>JQuery &amp; Bootstrap &amp; Ajax</span>
 							</li>
 						</ul>
 					</div>
